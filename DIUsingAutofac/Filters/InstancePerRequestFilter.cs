@@ -9,7 +9,7 @@ namespace DIUsingAutofac.Filters
 {
     public class InstancePerRequestFilter: ActionFilterAttribute
     {
-        public IInstancePerRequest Instance { get; set; }
+        public AbstractInstancePerRequest Instance { get; set; }
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             Instance.Text = "Demo Instance Per Request";

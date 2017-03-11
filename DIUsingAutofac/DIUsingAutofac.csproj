@@ -158,9 +158,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain\AbstractInstancePerRequest.cs" />
     <Compile Include="Domain\BlogRepository.cs" />
     <Compile Include="Domain\IBlogRepository.cs" />
-    <Compile Include="Domain\IInstancePerRequest.cs" />
     <Compile Include="Domain\InstancePerRequest.cs" />
     <Compile Include="Filters\InstancePerRequestFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +171,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Image\GetWebsite.PNG" />
+    <Content Include="Content\Image\InstancePerRequest.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

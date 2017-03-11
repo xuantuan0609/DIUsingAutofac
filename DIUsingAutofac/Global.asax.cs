@@ -19,6 +19,7 @@ namespace DIUsingAutofac
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //Register Autofac
             AutofacConfig.RegisterContainers();
         }
     }

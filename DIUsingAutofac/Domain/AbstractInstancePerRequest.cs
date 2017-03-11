@@ -5,8 +5,8 @@ using System.Web;
 
 namespace DIUsingAutofac.Domain
 {
-    public class InstancePerRequest: AbstractInstancePerRequest
+    public abstract class AbstractInstancePerRequest
     {
-        //some business code here
+        public string Text { get; set; }
     }
 }

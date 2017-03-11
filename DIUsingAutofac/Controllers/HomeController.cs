@@ -19,27 +19,13 @@ namespace DIUsingAutofac.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult GetWebsite()
         {
             ViewBag.Website = _blogRepository.GetWebsite();
             return View();
         }
         [InstancePerRequestFilter]
-        public ActionResult DemoInstancePerRequest(IInstancePerRequest instance)
+        public ActionResult DemoInstancePerRequest(AbstractInstancePerRequest instance)
         {
             ViewBag.Text = instance.Text;
             return View();

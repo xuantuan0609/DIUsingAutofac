@@ -15,12 +15,18 @@ namespace DIUsingAutofac.App_Start
         public static void RegisterContainers()
         {
             var builder = new ContainerBuilder();
+            //Register controllers
             builder.RegisterControllers(Assembly.Load("DIUsingAutofac"));
-                        builder.RegisterType<ExtensibleActionInvoker>().As<IActionInvoker>().InjectActionInvoker();
-            builder.RegisterType<BlogRepository>().As<IBlogRepository>();
-            builder.RegisterType<InstancePerRequest>().As<IInstancePerRequest>().InstancePerRequest();
-            
+            //Enable parameters injection
+            builder.RegisterType<ExtensibleActionInvoker>()
+                .As<IActionInvoker>().InjectActionInvoker();
+            //Enable property injection for action filter
             builder.RegisterFilterProvider();
+            //Register all of dependencies should be injected
+            //By default, the scope is instance per dependency
+            builder.RegisterType<BlogRepository>().As<IBlogRepository>();
+            builder.RegisterType<InstancePerRequest>()
+                .As<AbstractInstancePerRequest>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
